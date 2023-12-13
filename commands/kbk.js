@@ -12,7 +12,7 @@ export default async (event) => {
     const $ = cheerio.load(data)
     const replies = []
     // 新的footer連結與按鈕文字
-    const newFooterUri = "https://www.kebuke.com"
+    const newFooterUri = "https://www.kebuke.com/menu/"
     const newFooterLabel = "嫌爛就自己查"
 
     
