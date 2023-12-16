@@ -15,9 +15,19 @@ export default async (event) => {
     const newFooterUri = "https://www.kebuke.com/menu/"
     const newFooterLabel = "嫌爛自己查"
 
+    // 新的R價格
+    let pricesR = ["$35","$50","$35","$35","$45","$35","$60","$50","$35"]
+    // 新的L價格
+    let pricesL = ["$40","$60","$40","$40","$50","$40","$70","$60","$40"]
+    // 中杯卡洛里
+    let kclR = ["180kcl","165kcl","135kcl","180kcl","180kcl","135kcl","157kcl","165kcl","160kcl"]
+    // 大杯卡洛里
+    let kclL = ["200kcl","215kcl","211kcl","200kcl","200kcl","211kcl","214kcl","215kcl","180kcl"]
+    // 簡介
+    let info = ["令人傾心淡雅的花香調紅茶","舌尖上的蜂蜜尾韻與經典熟成的香氣","經典紅茶與古法熬煮冬瓜露","絲絨般果香調與一抹蜜桃風味","青翠綠茶與古法熬煮冬瓜露","帶莓果與綠茶的初戀般酸甜滋味","帶有濃穩果香的經典紅茶","舌尖上的蜂蜜尾韻與青翠春芽的香氣","春滿四溢的青翠綠茶"]
     
     // 取出網站資料
-    $('.archive-product__products-item-img').slice(24, 33).each(function () {
+    $('.archive-product__products-item-img').slice(24, 33).each(function (index) {
       
       // 取出圖片和標題
       const image = $(this).find('img').attr('src')
@@ -39,6 +49,17 @@ export default async (event) => {
   
       template.body.contents[0].text = chineseText
 
+      // 改中杯R價格
+      // template.body.contents[1].contents[0].contents[1].text = "$20"
+      template.body.contents[1].contents[0].contents[1].text = pricesR[index];
+      // 改大杯Ｌ價格
+      template.body.contents[1].contents[1].contents[1].text = pricesL[index]
+       // 改中杯卡洛里
+       template.body.contents[1].contents[0].contents[2].text = kclR[index];
+       // 改大杯卡洛里
+       template.body.contents[1].contents[1].contents[2].text = kclL[index];
+       // 改介紹
+      template.body.contents[2].text = info[index];
       // console.log(title)
    
       // 更新點擊按鈕後連結的網站

@@ -22,6 +22,7 @@ export default () => {
       "type": "uri",
       "uri": "https://linecorp.com"
     },
+    // content[0]
     "contents": [
       {
         "type": "text",
@@ -44,6 +45,7 @@ export default () => {
               },
               {
                 "type": "text",
+                // body.contents[1].contents[0].contents[1].text
                 "text": "$55",
                 "weight": "bold",
                 "margin": "sm",
@@ -68,7 +70,8 @@ export default () => {
               },
               {
                 "type": "text",
-                "text": "$40",
+                // .body.contents[1].contents[1].contents[1].text
+                "text": "$50",
                 "weight": "bold",
                 "margin": "sm",
                 "flex": 0

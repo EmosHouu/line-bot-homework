@@ -14,10 +14,19 @@ export default async (event) => {
     // 新的footer連結與按鈕文字
     const newFooterUri = "https://www.kebuke.com/menu/"
     const newFooterLabel = "嫌爛自己查"
-
+    // 新的R價格
+    let pricesR = ["$60","$70","$65","$60","$60","$65"]
+    // 新的L價格
+    let pricesL = ["$65","$80","$75","$65","$65","$70"]
+    // 中杯卡洛里
+    let kclR = ["358kcl","376kcl","358kcl","358kcl","358kcl","358kcl"]
+    // 大杯卡洛里
+    let kclL = ["384kcl","432kcl","443kcl","384kcl","384kcl","384kcl"]
+    // 簡介
+    let info = ["淡花香的麗春跳入玫瑰雲蓋般的甜綿","娓娓道出的餅香炒糖韻跳入玫瑰雲蓋般的甜綿","茶底蘊與鮮奶的濃醇跳入玫瑰雲蓋般的甜綿","經典熟成紅茶跳入玫瑰雲蓋般的甜綿","春滿四溢的青山跳入玫瑰雲蓋般的甜綿","恬淡蜜桃果香跳入玫瑰雲蓋般的甜綿"]
     
     // 取出網站資料
-    $('.archive-product__products-item-img').slice(9, 15).each(function () {
+    $('.archive-product__products-item-img').slice(9, 15).each(function (index) {
       // 取出圖片和標題
       const image = $(this).find('img').attr('src')
       // const imageUrl = new URL(image, 'https://wdaweb.github.io/') 圖片不是網站連結時才要用
@@ -37,7 +46,19 @@ export default async (event) => {
       template.hero.url = image 
   
       template.body.contents[0].text = chineseText
+      template.body.contents[0].text = chineseText
 
+      // 改中杯R價格
+      // template.body.contents[1].contents[0].contents[1].text = "$20"
+      template.body.contents[1].contents[0].contents[1].text = pricesR[index];
+      // 改大杯Ｌ價格
+      template.body.contents[1].contents[1].contents[1].text = pricesL[index]
+      // 改中杯卡洛里
+      template.body.contents[1].contents[0].contents[2].text = kclR[index];
+      // 改大杯卡洛里
+      template.body.contents[1].contents[1].contents[2].text = kclL[index];
+      // 改介紹
+      template.body.contents[2].text = info[index];
       // console.log(title)
    
       // 更新點擊按鈕後連結的網站

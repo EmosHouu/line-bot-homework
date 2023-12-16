@@ -7,6 +7,8 @@ import kbkR from './commands/kbkR.js'
 import kbkNg from './commands/kbkNg.js'
 import kbkMix from './commands/kbkMix.js'
 import kbkS from './commands/kbkS.js'
+import kbkMenu from './commands/kbkMenu.js'
+
 
 
 
@@ -103,6 +105,8 @@ bot.on('message', event => {
       kbkMix(event)
     }else if(event.message.text === '季節限定'){
       kbkS(event)
+    }else if(event.message.text === '123'){
+      kbkMenu(event)
     }
   }
 })
