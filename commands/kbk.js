@@ -13,7 +13,7 @@ export default async (event) => {
     const replies = []
     // 新的footer連結與按鈕文字
     const newFooterUri = "https://www.kebuke.com/menu/"
-    const newFooterLabel = "嫌爛就自己查"
+    const newFooterLabel = "我要自己查"
     // 新的R價格
     let pricesR = ["$60","$55","$55","$60","60"]
     // 新的L價格

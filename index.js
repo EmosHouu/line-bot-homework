@@ -8,6 +8,7 @@ import kbkNg from './commands/kbkNg.js'
 import kbkMix from './commands/kbkMix.js'
 import kbkS from './commands/kbkS.js'
 import kbkMenu from './commands/kbkMenu.js'
+import mks from './commands/mks.js'
 
 
 
@@ -107,9 +108,13 @@ bot.on('message', event => {
       kbkS(event)
     }else if(event.message.text === '123'){
       kbkMenu(event)
+    }else if(event.message.text === '111'){
+      mks(event)
     }
   }
 })
+
+
 // 機器人基本架構
 bot.listen('/', process.env.PORT || 2000, () => {
   console.log('機器人啟動')
